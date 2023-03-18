@@ -102,7 +102,7 @@ const App = () => {
       checkForRowOfThree()
       moveIntoSquareBelow()
       setCurrentColorArrangement([...currentColorArrangement])
-    }, 1000);
+    }, 125);
     return () => clearInterval(timer)  
 
   }, [checkForColumnOfFour, checkForRowOfFour, checkForColumnOfThree, checkForRowOfThree, moveIntoSquareBelow, currentColorArrangement])
@@ -115,7 +115,7 @@ const App = () => {
           <img 
             key={index}
             style={{backgroundColor: candyColor}}
-            alt={candyColor}
+            //alt={candyColor}
           />
         ))} 
       </div> 
