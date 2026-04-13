@@ -1,17 +1,50 @@
 .app {
-    display: flex;
-    padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #282c34;
+  padding: 30px;
 }
 
 .game {
-    width: 560px;
-    height: 560px;
-    display: flex;
-    flex-wrap: wrap;
+  width: 560px;
+  height: 560px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #31353d;
+  border-radius: 8px;
 }
 
 .game img {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
+  cursor: grab;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.2s ease;
 }
 
+.game img:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
+
+@keyframes blast {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.blast-animation {
+  animation: blast 0.3s forwards;
+}
