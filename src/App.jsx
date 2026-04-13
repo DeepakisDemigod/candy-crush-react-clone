@@ -228,30 +228,6 @@ const App = () => {
     }
   }, [squareBeingReplaced]);
 
-    const isValidMove = validMoves.includes(squareBeingReplacedId);
-
-    const isAColumnOfFour = checkForColumnOfFour();
-    const isARowOfFour = checkForRowOfFour();
-    const isAColumnOfThree = checkForColumnOfThree();
-    const isARowOfThree = checkForRowOfThree();
-
-    if (
-      squareBeingReplacedId &&
-      isValidMove &&
-      (isARowOfThree || isARowOfFour || isAColumnOfThree || isAColumnOfFour)
-    ) {
-      setSquareBeingDragged(null);
-      setSquareBeingReplaced(null);
-    } else {
-      noMatchSound.play().catch(() => {});
-      currentColorArrangement[squareBeingReplacedId] =
-        squareBeingReplaced.getAttribute("src");
-      currentColorArrangement[squareBeingDraggedId] =
-        squareBeingDragged.getAttribute("src");
-      setCurrentColorArrangement([...currentColorArrangement]);
-    }
-  };
-
   const createBoard = () => {
     const randomColorArrangement = [];
     for (let i = 0; i < width * width; i++) {
@@ -294,6 +270,8 @@ const App = () => {
             onDragLeave={(e) => e.preventDefault()}
             onDrop={dragDrop}
             onDragEnd={dragEnd}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           />
         ))}
       </div>

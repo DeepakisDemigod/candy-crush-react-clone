@@ -4,21 +4,23 @@
   align-items: center;
   min-height: 100vh;
   background-color: #282c34;
-  padding: 30px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .game {
-  width: 560px;
-  height: 560px;
+  width: min(560px, 95vw);
+  height: min(560px, 95vw);
   display: flex;
   flex-wrap: wrap;
   background-color: #31353d;
   border-radius: 8px;
+  touch-action: none;
 }
 
 .game img {
-  width: 70px;
-  height: 70px;
+  width: 12.5%;
+  height: 12.5%;
   cursor: grab;
   transition:
     transform 0.3s ease-in-out,
