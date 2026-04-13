@@ -16,13 +16,9 @@ const yellowCandy =
 const blank =
   "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
-// Sound effects URLs
-const matchSound = new Audio(
-  "https://www.myinstants.com/media/sounds/bejeweled-match.mp3",
-);
-const noMatchSound = new Audio(
-  "https://www.myinstants.com/media/sounds/nope_P6AAmio.mp3",
-);
+// Sound effects
+const matchSound = new Audio('https://www.myinstants.com/media/sounds/bejeweled-match.mp3');
+const noMatchSound = new Audio('https://www.myinstants.com/media/sounds/nope_P6AAmio.mp3');
 
 const candyColors = [
   blueCandy,
